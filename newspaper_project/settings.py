@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     #Local
     'users.apps.UsersConfig',
     'pages.apps.PagesConfig', 
+    'articles.apps.ArticlesConfig'
 
     
 ]
@@ -142,4 +143,11 @@ LOGOUT_REDIRECT_URL = 'home'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend' #
+DEFAULT_FROM_EMAIL = 'jobrhn@gmail.com'
+EMAIL_HOST = 'smtp.sendgrid.net'
+EMAIL_HOST_USER = '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'
+EMAIL_HOST_PASSWORD = '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'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
